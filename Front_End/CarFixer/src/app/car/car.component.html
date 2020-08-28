@@ -1,0 +1,49 @@
+<img *ngIf="stop" class="img" src="/assets/photos/200.gif">
+
+
+<div  *ngIf="carLenght == 0">
+    <hr>
+    <h1> Araba Kaydı BulunmamakTadır </h1>
+    <hr>
+</div>
+
+<div *ngIf="carLenght != 0">
+
+
+    <div *ngIf="showCar && carList" >
+        <table  class="table table-hover"  width="100%">
+            <thead>
+                <tr>
+                    <th>
+                    <h1>Arabalar</h1> 
+                    </th>
+                </tr>
+            </thead>
+            <tbody>  
+                <tr *ngFor="let car of  carList" >
+                    <td>
+                        <details>
+                            <summary class="Hover" style="font-weight: bold;" style="font-weight: bold;">
+                                Plaka :{{car.Plaque}} / Müşter İsmi: {{car.CustomerName}}
+                            </summary>
+                                <div class="Hover" >Araba Tipi :{{car.CarTypeName}}</div>
+                                <div class="Hover" >Marka:{{car.BrandName}}</div>
+                                <div class="Hover" >Model: {{car.ModelName}}</div>
+                                <div class="Hover" *ngIf="car.ModelYear">Model Yılı: {{car.ModelYear}}</div>
+                                <div class="Hover" *ngIf="car.EngineNumber">Motor Numaras: {{car.EngineNumber}}</div>
+                                <div class="Hover" *ngIf="car.SasiNo">sasi Numarası: {{car.SasiNo}}</div>
+                                <div class="Hover" *ngIf="car.LicenseOwnder">Ruhsat Sahibi: {{car.LicenseOwnder}}</div>
+                                <div class="Hover" *ngIf="car.Color">Araba Rengi: {{car.Color}}</div>
+                                <div class="Hover" *ngIf="car.KeyCode">Key Code: {{car.KeyCode}}</div>
+                                <div class="Hover" *ngIf="car.EngineCapacity">Motor Kapasitesi: {{car.EngineCapacity}}</div>
+                                <div class="Hover" *ngIf="car.FuelType">Benzin Tipi: {{car.FuelType}}</div>
+                            </details>
+                    </td>
+                    <button  class="btn btn-primary" (click)="update(car)">Güncelle</button>
+                    <button  class="btn btn-primary" [routerLink]="['/addworkorder',car]" >İş Akdi</button>
+                </tr>
+            </tbody>
+        </table>   
+    </div>
+</div>
+<app-add-car   [car]="car" (carListOutPut)="OutPutComeFromAddCar($event)" *ngIf="showCarAddCar"></app-add-car>

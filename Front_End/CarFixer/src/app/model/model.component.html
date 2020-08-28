@@ -1,0 +1,16 @@
+<div *ngIf="showModel">
+    <hr>
+    <h3>Modeller</h3>   
+    <form class="form-group">
+        <select class="form-control"  name="ID"  id="ID" #ID="ngModel"  [(ngModel)]="model.ID"  (change)="catchModelID()">
+            <option *ngFor="let model of modelListInput" [value]="model.ID"> {{model.Name}} </option>
+        </select>
+        <div *ngIf="!model.ID" class="alert alert-primary">Model Seçmek Zorunludur.</div>
+        <br>
+      <button class="btn btn-primary" [disabled]="!model.ID"  (click)=" UpdatebyButtonUpdate()">Güncelle</button>
+        <button  (click)="add()" class="btn btn-primary" >Yeni Araba Modeli Ekle</button>
+        <button (click)="delete()"  [disabled]="!model.ID" class="btn btn-danger">Sil</button>
+    </form> 
+</div>
+  <app-add-model  [modelInput]="model" [BrandIDInput]="BrandIDInput" (modelListOutPut)="modelListOutPut($event)" *ngIf="showAddModel"></app-add-model>
+  

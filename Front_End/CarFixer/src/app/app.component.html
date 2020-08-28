@@ -1,0 +1,43 @@
+<nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+  <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="#">Company name</a>
+  <button  id="Deneme" class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+</nav>
+
+<div class="container-fluid">
+
+  <div class="row">
+   <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse" style="border-right:2px solid grey;">
+      <div class="sidebar-sticky pt-3">
+        <ul class="nav flex-column">
+          
+          <li class="nav-item">
+            <a class="nav-link active" routerLink="/customers"> Müşteriler </a>
+            <ul>
+            <li ><a  class="nav-link active"routerLink="/addcustomer">Müşteri Ekle</a></li></ul>
+          </li>
+
+          <li class="nav-item"><a class="nav-link active" routerLink="/cars"> Arabalar</a></li>
+         <li ><a  class="nav-link active"routerLink="/workorder">Yapılmış İşler</a></li>
+         <li ><a  class="nav-link active"routerLink="/workorder">Aktif İşler</a></li>
+         <li class="nav-item"><a class="nav-link active"routerLink="/employees">Personeller</a>
+          <ul><li> <a class="nav-link active"routerLink="/addemployee" >Personel Ekle </a> </li></ul>      
+        </li>
+        <li class="nav-item"><a class="nav-link active"routerLink="/products">Parçalar</a>
+          <ul><li> <a class="nav-link active"routerLink="/addproduct" >Parça Ekle </a> </li></ul>      
+        </li>
+       </ul>
+      </div>
+    </nav>
+
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+  
+
+      <router-outlet></router-outlet>
+          <canvas class="my-4 w-100" id="myChart" width="900" height="415"></canvas>
+
+       
+
+        
+     

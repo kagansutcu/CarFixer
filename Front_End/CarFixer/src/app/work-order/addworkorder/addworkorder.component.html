@@ -1,0 +1,104 @@
+<h1>İş Akdi Ekle</h1>
+<hr>
+<form #addWorkOrder="ngForm">
+    <div class="form-group">
+        <h4>
+            <div>Aracı Bırakan </div>
+        </h4>
+        <input [(ngModel)]="workOrder.AraciBirakan" name="AraciBirakan" #AraciBirakan="ngModel" required
+            class="form-control">
+        <div *ngIf="AraciBirakan.invalid" class="alert alert-primary">Zorunlu Bölüm</div>
+    </div>
+
+    <div class="form-group">
+        <h4>
+            <div>Aracı Bırakan Telefon Numarası</div>
+        </h4>
+        <input [(ngModel)]="workOrder.Phone" name="Phone" #Phone="ngModel" required class="form-control">
+        <div *ngIf="Phone.invalid" class="alert alert-primary">Zorunlu Bölüm</div>
+    </div>
+
+    <div class="form-group">
+        <h4>
+            <div>Araç Kilometresi</div>
+        </h4>
+        <input type="number" [(ngModel)]="workOrder.Km" name="Km" #Km="ngModel" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <h4>
+            <div>Bakıma Gelecegi Kilometre</div>
+        </h4>
+        <input type="number" [(ngModel)]="workOrder.BakimaGelicegiKm" name="BakimaGelicegiKm"
+            #BakimaGelicegiKm="ngModel" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <h4>
+            <div>Sigorta Şirketi</div>
+        </h4>
+        <input [(ngModel)]="workOrder.insuranceCompany" name="insuranceCompany" #insuranceCompany="ngModel"
+            class="form-control">
+    </div>
+
+    <div class="form-group">
+        <h4>
+            <div>Müşteri İstekleri</div>
+        </h4>
+        <input [(ngModel)]="workOrder.CustomerWant" name="CustomerWant" #CustomerWant="ngModel" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <h4>
+            <div>Yapılacak İşlemler/Notlar</div>
+        </h4>
+        <input [(ngModel)]="workOrder.EmployeeComment" name="EmployeeComment" #EmployeeComment="ngModel"
+            class="form-control">
+    </div>
+
+    <div class="form-group">
+        <h4>
+            <div>Fiyat</div>
+        </h4>
+        <input type="number" [(ngModel)]="workOrder.Price" name="Price" #Price="ngModel" class="form-control">
+    </div>
+    <div class="form-group">
+      
+        <button class="btn btn-primary"  (click)="show()">Parçalar</button>
+        <div *ngIf="table">
+           <h4>Parça İsmi</h4> 
+            <input  [(ngModel)]="filter" name="filter" class="form-control" >
+        </div>
+            <table *ngIf="table" class="table table-hover">
+            <thead>
+            </thead>
+            <tbody>
+                <tr *ngFor="let product of productList |productFilter:filter">
+                    <td>
+                        <details>
+                            <summary style="font-weight: bold;">
+                                İsim:{{product.Name}} /Stok:{{product.Stock}}
+                             
+                            </summary>
+                            <div *ngIf="product.Code">  Ürün Kodu :{{product.Code}} </div>
+                            <div *ngIf="product.Barcode"> Barkod :{{product.Barcode}}</div>
+                            
+                            <div *ngIf="product.SellingPrice"> Satış Fİyatı: {{product.SellingPrice}}</div>
+                            <div  *ngIf="product.BuyingPrice"> Alış Fiyatı: {{product.BuyingPrice}}</div>
+                         </details>
+                    </td>
+                    <button [disabled]="!product.number" class="btn btn-primary" (click)="AddProduct(product)">Ekle</button>
+                   <input [(ngModel)]="product.number"  #Used="ngModel" name="Used"type="number" style="width: 15%">
+                </tr>
+            </tbody>        
+        </table>
+    </div>
+</form>
+
+<div class="form-group">
+    <h4>Personel Görevlendirme</h4>
+    <app-employee *ngIf="stopCode"(employeeOutPut)="dataFromEmployee($event)"></app-employee>
+</div>
+
+<button class="btn btn-primary" [disabled]="addWorkOrder.invalid" [disabled]=" !Work_Employee.EmployeeID "(click)="add()">İş Akdini Oluştur</button>
+

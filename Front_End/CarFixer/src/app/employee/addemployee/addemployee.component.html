@@ -1,0 +1,19 @@
+<div style="margin-bottom: 2%;">
+    <h1>Personel Ekle</h1>
+    <hr>
+</div>
+<div>
+    <form #addemployee="ngForm">
+        <div class="form-group">
+            <input name="Name" [(ngModel)]="employee.Name" class="form-control" required #Name="ngModel"  placeholder="İsmi" >
+            <div *ngIf="Name.invalid" class="alert alert-primary">Çalışan İsmi Zorunludur</div>
+           
+        </div>
+        <div class="form-group">
+            <input name="PhoneNumber" [(ngModel)]="employee.PhoneNumber" required class="form-control" minlength="10" maxlength="10" #PhoneNumber="ngModel" placeholder="Telefon Numaası/Başında 0 Olmadan Giriniz"> 
+            <div *ngIf="PhoneNumber.invalid" class="alert alert-primary" >Telefon Numarası Zorunludur</div>
+        </div>
+    </form>
+</div>
+<button *ngIf="!employee.ID"  [disabled]="addemployee.invalid"class="btn btn-primary" (click)="add()">Ekle</button>
+<button *ngIf="employee.ID"  [disabled]="addemployee.invalid"class="btn btn-primary" (click)="update()">Veriyi Degiştir</button>

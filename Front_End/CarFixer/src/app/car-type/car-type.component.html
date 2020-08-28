@@ -1,0 +1,15 @@
+<div *ngIf="showCarType">
+    <hr>
+    <h1>Araba Tipi</h1>
+<form class="form-group">
+    <select  class="form-control" [(ngModel)]="carType.ID" #ID="ngModel" name="ID" (change)="catchID()">
+        <option     *ngFor="let carType of carTypeList"  [value]="carType.ID">{{carType.Name}}</option>
+    </select>
+    <div *ngIf="!carType.ID" class="alert alert-primary">Araba Tipi Seçmek Zorunludur. </div>
+</form>
+
+<button class="btn btn-primary" (click)="add()">Yeni Araba Tipi Ekle</button>
+<button class="btn btn-primary" (click)="update()" [disabled]="!carType.ID"  > Güncelle</button>
+<button class="btn btn-danger" (click)="delete()" [disabled]="!carType.ID"  >Sil</button>
+</div>
+<app-addcartype (carTypeListOutPut)="outPutComeFromAddCarType($event)" [carType]="carTypeInput" *ngIf="showAddCarType"></app-addcartype>

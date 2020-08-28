@@ -1,0 +1,9 @@
+<div>
+    <form>
+        <input type="text" [(ngModel)]="carType.Name" required #Name="ngModel" name="Name" class="form-control" >
+    <div *ngIf="Name.invalid" class="alert alert-primary">Araba Tipi İsmi Zorunludur</div>
+    </form>
+    <button class="btn btn-primary" *ngIf="!carType.ID"  [disabled]="Name.invalid" (click)="add()">Ekle</button>
+    <button class="btn btn-primary" *ngIf="carType.ID" (click)="  update()" >Veriyi Degiştir</button>
+    <button class="btn btn-primary" (click)="cancel()">İptal</button>
+</div>

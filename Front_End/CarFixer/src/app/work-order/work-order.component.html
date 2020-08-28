@@ -1,0 +1,40 @@
+<div>
+<h1>Aktiv İşler</h1>
+<div>
+<table class="table table-hover" >
+    <thead>
+
+    </thead>
+    
+    <tbody>
+        <tr *ngFor="let workorder of arrayWorkOrder">
+            <td>    
+            <details>
+                <summary class="Hover" style="font-weight: bold;">
+              Plaka:  {{workorder.Plaque}}  / Müşteri İsmi :{{workorder.CustomerName}} / Telefon Numarası : {{workorder.Phone}}
+                </summary>
+                <div class="Hover" *ngIf="workorder.AraciBirakan">Aracı Bırakan :{{workorder.AraciBirakan }}</div>
+                <div class="Hover" *ngIf="workorder.BirakimTarihi">Aracı Bırakım Tarihi : {{workorder.BirakimTarihi}} </div>
+                BirakimTarihi: Date;
+                AlmaTarihi: string;
+                Km: string;
+                BakimaGelicegiKm: string;
+                BakimaGelecegiTarih: string;
+                Price: number;
+                insuranceCompany: string;
+                CustomerWant: string;
+                EmployeeComment: string;
+                Plaque:string;          
+                Used:number;
+                CustomerName:string;
+                ProductName:string;
+            </details>
+         
+            </td>
+        </tr>
+
+    </tbody>
+    
+</table>
+</div>
+<div>

@@ -1,0 +1,16 @@
+<div *ngIf="showBrand">
+    <hr>
+    <h3>Araba Makaları</h3>
+    <form class="form-group">
+        <select class="form-control"  name="ID"  id="ID" #ID="ngModel"  [(ngModel)]="brand.ID"  (change)="catchBrandID()">
+            <option *ngFor="let brand of brandList" [value]="brand.ID"> {{brand.Name}} </option>
+        </select>
+        <div  class="alert alert-primary" *ngIf="!brand.ID">Marka Seçmek Zoruludur</div>
+        <br>
+
+        <button  (click)="add()" class="btn btn-primary" >Yeni Araba Markası Ekle</button>
+        <button class="btn btn-primary" [disabled]="!brand.ID"  (click)=" UpdatebyButtonUpdate()">Güncelle</button>
+        <button (click)="delete()"  [disabled]="!brand.ID" class="btn btn-danger">Sil</button>
+    </form> 
+</div>
+  <app-add-brand  [BrandInput]="brand"  (brandListOutPut)="brandListOutPutFromAddCar($event)" *ngIf="showAddBrand"></app-add-brand>

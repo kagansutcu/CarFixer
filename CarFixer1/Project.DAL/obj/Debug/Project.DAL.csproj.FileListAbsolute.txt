@@ -1,0 +1,14 @@
+C:\Users\akcae\OneDrive\Masaüstü\Levent\CarFixer1\Project.DAL\bin\Debug\Project.DAL.dll.config
+C:\Users\akcae\OneDrive\Masaüstü\Levent\CarFixer1\Project.DAL\bin\Debug\Project.DAL.dll
+C:\Users\akcae\OneDrive\Masaüstü\Levent\CarFixer1\Project.DAL\bin\Debug\Project.DAL.pdb
+C:\Users\akcae\OneDrive\Masaüstü\Levent\CarFixer1\Project.DAL\bin\Debug\EntityFramework.dll
+C:\Users\akcae\OneDrive\Masaüstü\Levent\CarFixer1\Project.DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\akcae\OneDrive\Masaüstü\Levent\CarFixer1\Project.DAL\bin\Debug\Project.Models.dll
+C:\Users\akcae\OneDrive\Masaüstü\Levent\CarFixer1\Project.DAL\bin\Debug\Project.Models.pdb
+C:\Users\akcae\OneDrive\Masaüstü\Levent\CarFixer1\Project.DAL\bin\Debug\EntityFramework.xml
+C:\Users\akcae\OneDrive\Masaüstü\Levent\CarFixer1\Project.DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\akcae\OneDrive\Masaüstü\Levent\CarFixer1\Project.DAL\obj\Debug\Project.DAL.csprojAssemblyReference.cache
+C:\Users\akcae\OneDrive\Masaüstü\Levent\CarFixer1\Project.DAL\obj\Debug\Project.DAL.csproj.CoreCompileInputs.cache
+C:\Users\akcae\OneDrive\Masaüstü\Levent\CarFixer1\Project.DAL\obj\Debug\Project.DAL.csproj.CopyComplete
+C:\Users\akcae\OneDrive\Masaüstü\Levent\CarFixer1\Project.DAL\obj\Debug\Project.DAL.dll
+C:\Users\akcae\OneDrive\Masaüstü\Levent\CarFixer1\Project.DAL\obj\Debug\Project.DAL.pdb

@@ -1,0 +1,48 @@
+<div>
+    <form class="form-group">
+    <h1>Araba Ekle</h1>
+    <br>
+   
+    <app-car-type  (CartypeIDOutPut)="CartypeIDOutPut($event)" [CarTypeIDInput]="car.CartypeID"></app-car-type>
+    <app-brand (BrandIDOutPut)="brandIDFromBrandComponent($event)"  *ngIf="car.CartypeID" [brandIDInput]="car.BrandID"></app-brand>
+    <app-model  (ModelIDOutPut)="ModelIDOutPut($event)" [ModelIDInput]="ModelID"  [BrandIDInput]="brandID" [modelListInput]="modelListInput" *ngIf="brandID" ></app-model>
+    <hr>
+        <div  class="form-group">
+            <hr>
+            <h1>Model Yılı</h1>
+            <select class="form-control" [(ngModel)]="car.ModelYear" #ModelYear="ngModel"  name="ModelYear">
+                <option  *ngFor="let year of years" [value]="year">{{year}}</option>
+            </select>
+        </div>
+        <div  class="form-group">
+            <input [(ngModel)]="car.Plaque" class="form-control"  name="Plaque" #Plaque="ngModel" required placeholder="Plaka"  >
+            <div *ngIf="Plaque.invalid" class="alert alert-primary" >Plaka Girilmesi Zorunludur</div>
+        </div>
+       
+        <div  class="form-group">
+            <input class="form-control" [(ngModel)]="car.EngineNumber" #EngineNumber="ngModel" name="EngineNumber" placeholder="Motor Numarası" >
+        </div>
+        <div  class="form-group">
+            <input class="form-control" [(ngModel)]="car.SasiNo" #SaisiNo="ngModel" name="SasiNo" placeholder="Şasi Numarası" >
+        </div>
+        <div  class="form-group"> 
+            <input class="form-control" [(ngModel)]="car.LicenseOwnder" #LicenseOwnder="ngModel" name="LicenseOwnder" placeholder="Ruhsat Sahibi" >
+        </div>
+        <div  class="form-group" >
+            <input class="form-control" [(ngModel)]="car.Color" #Color="ngModel" name="Color" placeholder="Arabanın Rengi" >
+        </div>
+        <div  class="form-group" >
+            <input class="form-control" [(ngModel)]="car.KeyCode" #KeyCode="ngModel" name="KeyCode" placeholder="Key Code" >
+        </div>
+        <div  class="form-group" >
+            <input class="form-control" [(ngModel)]="car.EngineCapacity" #EngineCapacity="ngModel" name="EngineCapacity" placeholder="Motor Kapasitesi" >
+        </div>
+        <div  class="form-group" >
+            <input class="form-control" [(ngModel)]="car.FuelType" #FuelType="ngModel" name="FuelType" placeholder="Yakıt Tipi" >
+        </div>
+        <button [disabled]="!car.Model_ID || Plaque.invalid || !car.CartypeID" *ngIf="!car.ID" class="btn btn-primary" id="btnArabaOluşur" (click)="add()" >Araba Oluştur </button>
+        <button  [disabled]="!car.Model_ID || Plaque.invalid || !car.CartypeID" (click)="update()" *ngIf="car.ID" class="btn btn-primary" >Veriyi Degiştir </button>
+        <button class="btn btn-primary" (click)="cancel()" >İptal </button>
+    </form> 
+</div>
+    

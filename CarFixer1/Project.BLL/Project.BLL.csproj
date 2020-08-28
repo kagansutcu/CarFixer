@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{78373562-538F-4E88-8AE0-F35F668D53A9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Project.BLL</RootNamespace>
+    <AssemblyName>Project.BLL</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DesignPatterns\RepositoryPattern\BaseRepository\BaseRepository.cs" />
+    <Compile Include="DesignPatterns\RepositoryPattern\IntRepository\IntRepository.cs" />
+    <Compile Include="DesignPatterns\RepositoryPattern\Repositories\BrandRep.cs" />
+    <Compile Include="DesignPatterns\RepositoryPattern\Repositories\CarRep.cs" />
+    <Compile Include="DesignPatterns\RepositoryPattern\Repositories\CarTypeRep.cs" />
+    <Compile Include="DesignPatterns\RepositoryPattern\Repositories\CustomerREp.cs" />
+    <Compile Include="DesignPatterns\RepositoryPattern\Repositories\EmployeeRep.cs" />
+    <Compile Include="DesignPatterns\RepositoryPattern\Repositories\ModelRep.cs" />
+    <Compile Include="DesignPatterns\RepositoryPattern\Repositories\ProductRep.cs" />
+    <Compile Include="DesignPatterns\RepositoryPattern\Repositories\WorkOrderRep.cs" />
+    <Compile Include="DesignPatterns\SingeltonPattern\Singelton.cs" />
+    <Compile Include="Dto\DTOBase.cs" />
+    <Compile Include="Dto\DTOBrand.cs" />
+    <Compile Include="Dto\DTOCar.cs" />
+    <Compile Include="Dto\DTOCarType.cs" />
+    <Compile Include="Dto\DTOCustomer.cs" />
+    <Compile Include="Dto\DTOEmployee.cs" />
+    <Compile Include="Dto\DTOModel.cs" />
+    <Compile Include="Dto\DTOProduct.cs" />
+    <Compile Include="Dto\DTOWorkOrder.cs" />
+    <Compile Include="Mappers\Employee_WorkOrder_Product.cs" />
+    <Compile Include="Mappers\MapperBrand.cs" />
+    <Compile Include="Mappers\MapperCar.cs" />
+    <Compile Include="Mappers\MapperCarType.cs" />
+    <Compile Include="Mappers\MapperCustomer.cs" />
+    <Compile Include="Mappers\MapperEmployee.cs" />
+    <Compile Include="Mappers\MapperModel.cs" />
+    <Compile Include="Mappers\MapperProduct.cs" />
+    <Compile Include="Mappers\MapperWorkOrder.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Project.DAL\Project.DAL.csproj">
+      <Project>{6ea10d62-47e1-4c79-b08d-6db879c55e0a}</Project>
+      <Name>Project.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Project.Models\Project.Models.csproj">
+      <Project>{f9e2ea8f-5aba-4987-a3ff-329687fbc734}</Project>
+      <Name>Project.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

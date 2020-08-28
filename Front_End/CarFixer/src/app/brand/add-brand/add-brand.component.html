@@ -1,0 +1,11 @@
+<hr>
+<h1>Marka Ekle</h1>
+
+<form #addbrand="ngForm">
+    <input  class="form-control" type="text" required [(ngModel)]="brand.Name" #Name="ngModel"  name="Name" >
+    <div class="alert alert-primary" *ngIf="Name.invalid">Marka ismi Zorunludu </div>
+    <br>
+    <button  class="btn btn-primary"  *ngIf="!brand.ID" [disabled]="Name.invalid" (click)="add()">Ekle</button>
+    <button  class="btn btn-primary" [disabled]="Name.invalid" *ngIf="brand.ID" (click)="update()"> Veriyi Degişir</button>
+     <button  class="btn btn-primary" (click)="cancel()">İptal </button>
+</form>
