@@ -15,3 +15,20 @@ C:\Users\akcae\OneDrive\Masaüstü\Levent\CarFixer1\Project.BLL\obj\Debug\Projec
 C:\Users\akcae\OneDrive\Masaüstü\Levent\CarFixer1\Project.BLL\obj\Debug\Project.BLL.csproj.CopyComplete
 C:\Users\akcae\OneDrive\Masaüstü\Levent\CarFixer1\Project.BLL\obj\Debug\Project.BLL.dll
 C:\Users\akcae\OneDrive\Masaüstü\Levent\CarFixer1\Project.BLL\obj\Debug\Project.BLL.pdb
+C:\Users\akcae\OneDrive\Masaüstü\Yeni klasör (2)\CarFixer1\Project.BLL\bin\Debug\Project.BLL.dll.config
+C:\Users\akcae\OneDrive\Masaüstü\Yeni klasör (2)\CarFixer1\Project.BLL\bin\Debug\Project.BLL.dll
+C:\Users\akcae\OneDrive\Masaüstü\Yeni klasör (2)\CarFixer1\Project.BLL\bin\Debug\Project.BLL.pdb
+C:\Users\akcae\OneDrive\Masaüstü\Yeni klasör (2)\CarFixer1\Project.BLL\bin\Debug\EntityFramework.dll
+C:\Users\akcae\OneDrive\Masaüstü\Yeni klasör (2)\CarFixer1\Project.BLL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\akcae\OneDrive\Masaüstü\Yeni klasör (2)\CarFixer1\Project.BLL\bin\Debug\Project.DAL.dll
+C:\Users\akcae\OneDrive\Masaüstü\Yeni klasör (2)\CarFixer1\Project.BLL\bin\Debug\Project.Models.dll
+C:\Users\akcae\OneDrive\Masaüstü\Yeni klasör (2)\CarFixer1\Project.BLL\bin\Debug\Project.DAL.pdb
+C:\Users\akcae\OneDrive\Masaüstü\Yeni klasör (2)\CarFixer1\Project.BLL\bin\Debug\Project.DAL.dll.config
+C:\Users\akcae\OneDrive\Masaüstü\Yeni klasör (2)\CarFixer1\Project.BLL\bin\Debug\Project.Models.pdb
+C:\Users\akcae\OneDrive\Masaüstü\Yeni klasör (2)\CarFixer1\Project.BLL\bin\Debug\EntityFramework.xml
+C:\Users\akcae\OneDrive\Masaüstü\Yeni klasör (2)\CarFixer1\Project.BLL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\akcae\OneDrive\Masaüstü\Yeni klasör (2)\CarFixer1\Project.BLL\obj\Debug\Project.BLL.csprojAssemblyReference.cache
+C:\Users\akcae\OneDrive\Masaüstü\Yeni klasör (2)\CarFixer1\Project.BLL\obj\Debug\Project.BLL.csproj.CoreCompileInputs.cache
+C:\Users\akcae\OneDrive\Masaüstü\Yeni klasör (2)\CarFixer1\Project.BLL\obj\Debug\Project.BLL.csproj.CopyComplete
+C:\Users\akcae\OneDrive\Masaüstü\Yeni klasör (2)\CarFixer1\Project.BLL\obj\Debug\Project.BLL.dll
+C:\Users\akcae\OneDrive\Masaüstü\Yeni klasör (2)\CarFixer1\Project.BLL\obj\Debug\Project.BLL.pdb

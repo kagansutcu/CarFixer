@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { Car } from './Car';
 import { CarService } from '../Services/car.service';
 import { AddCarComponent } from './add-car/add-car.component';
-import { ThrowStmt } from '@angular/compiler';
+import { WorkOrder } from '../work-order/workOrder';
+import { WorkorderService } from '../Services/workorder.service';
+
 
 
 @Component({
@@ -14,19 +15,24 @@ import { ThrowStmt } from '@angular/compiler';
 })
 export class CarComponent implements OnInit {
 carList:Car[];
+workOrderList:WorkOrder[];
 showCarAddCar=false;
 showCar=true;
 car:Car = new Car();
 stop = true;
 carLenght:number;
-  constructor(private CarService:CarService) { }
+plaque:string;
+constructor(private CarService:CarService,private WorkOrderService:WorkorderService) { }
 
   ngOnInit(): void{
     this.CarService.GetAll().subscribe(data => {
       this.carList = data;
       console.log("component:Car/ListCar=",this.carList)
-      this.carLenght = this.carList.length;
       this.stop = false;
+      this.WorkOrderService.GetAll().subscribe(data => {
+        this.workOrderList = data;
+      })
+      
     })
   }
 
@@ -38,10 +44,6 @@ carLenght:number;
     this.showCarAddCar = true;
   }
 
-  WorkOrder()
-  {
-
-  }
   OutPutComeFromAddCar(carList:Car[])
   {
     this.showCar = true;
@@ -50,6 +52,25 @@ carLenght:number;
     {
       this.carList =carList;
       console.log("component:Car /CarList=",this.carList)
+    }
+  }
+
+  deleteCar(car:Car)
+  {
+    if(confirm("'"+car.Plaque +"'" +" Plakalı Aracı Silmek İçin Emin Misiniz?"))
+    {
+      for(let workOrder of this.workOrderList)
+      {
+        if(workOrder.CarID == car.ID)
+        {
+          alert("'"+car.Plaque +"'" +"Plakalı Aracın İş Akidleri  Mevcuttur.")
+              return;
+        } 
+      }
+
+      this.CarService.Delete(car.ID).subscribe(data => {
+        this.carList = data;
+      });
     }
   }
 }

@@ -5,12 +5,14 @@
 <div>
     <form #addemployee="ngForm">
         <div class="form-group">
-            <input name="Name" [(ngModel)]="employee.Name" class="form-control" required #Name="ngModel"  placeholder="İsmi" >
-            <div *ngIf="Name.invalid" class="alert alert-primary">Çalışan İsmi Zorunludur</div>
+            <h4>Personel Adı/ Soy Adı </h4>
+            <input name="Name" [(ngModel)]="employee.Name" class="form-control" required #Name="ngModel" >
+            <div *ngIf="Name.invalid" class="alert alert-primary">Çalışan İsmi/Soy İsmi Zorunludur</div>
            
         </div>
         <div class="form-group">
-            <input name="PhoneNumber" [(ngModel)]="employee.PhoneNumber" required class="form-control" minlength="10" maxlength="10" #PhoneNumber="ngModel" placeholder="Telefon Numaası/Başında 0 Olmadan Giriniz"> 
+            <h4>Telefon Numarası/Başında Sıfır Ormadan Giriniz </h4>
+            <input name="PhoneNumber" [(ngModel)]="employee.PhoneNumber" required class="form-control" minlength="10" maxlength="10" #PhoneNumber="ngModel" > 
             <div *ngIf="PhoneNumber.invalid" class="alert alert-primary" >Telefon Numarası Zorunludur</div>
         </div>
     </form>

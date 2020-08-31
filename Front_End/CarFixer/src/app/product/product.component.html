@@ -17,13 +17,12 @@
         <td>
           <details>
           <summary style="font-weight: bold;" class="Hover">
-          İsmi:  {{product.Name}}   / Stok: {{product.Stock}}  
+            İsmi: {{product.Name}} / Stok: {{product.Stock}}  
             </summary>
-            <div *ngIf="product.Code">  Ürün Kodu :{{product.Code}} </div>
-            <div class="Hover" *ngIf="product.Barcode"> Barkod :{{product.Barcode}}</div>
-            
-            <div class="Hover" *ngIf="product.SellingPrice"> Satış Fİyatı: {{product.SellingPrice}}</div>
-            <div class="Hover" *ngIf="product.BuyingPrice"> Alış Fiyatı: {{product.BuyingPrice}}</div>
+            <div *ngIf="product.Code"> Ürün Kodu :{{product.Code}} </div>
+            <div class="Hover" *ngIf="product.Barcode">Barkod :{{product.Barcode}}</div>
+            <div class="Hover" *ngIf="product.SellingPrice">Satış Fİyatı :{{product.SellingPrice}}</div>
+            <div class="Hover" *ngIf="product.BuyingPrice">Alış Fiyatı :{{product.BuyingPrice}}</div>
           </details>
         </td>
         <button class="btn btn-primary" (click)="update(product)">Güncelle</button>

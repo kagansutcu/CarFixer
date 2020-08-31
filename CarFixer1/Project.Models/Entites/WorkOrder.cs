@@ -13,7 +13,7 @@ namespace Project.DAL.Entites.Project.Models
     {
         public WorkOrder()
         {
-            BirakimTarihi = DateTime.Now.ToString("HH:MM");
+            BirakimTarihi = DateTime.Now.ToString("dd/MM/yyyy  HH:mm");
         }
     
         public string AraciBirakan { get; set; }

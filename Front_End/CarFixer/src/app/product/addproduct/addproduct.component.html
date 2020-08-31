@@ -2,26 +2,40 @@
 <hr>
 
 <form #addProduct="ngForm">
-    <div class="form-group" >
-        <input type="text"  [(ngModel)]="product.Name" #Name="ngModel" name="Name" required   placeholder="Ürün İsmi" class="form-control">
+
+    <div class="form-group">
+        <h4>Ürün İsmi</h4>
+        <input type="text"  [(ngModel)]="product.Name" #Name="ngModel" name="Name" required class="form-control">
         <div class="alert alert-primary" *ngIf="Name.invalid">Ürün İsmi Zorunludur </div>
     </div>
+    
     <div class="form-group">
-        <input type="text" [(ngModel)]="product.Code" #Code="ngModel" name="Code"   placeholder="Ürün Kodu" class="form-control" >
+        <h4>Ürün Kodu</h4>
+        <input type="text" [(ngModel)]="product.Code" #Code="ngModel" name="Code" class="form-control" >
     </div>
+    
     <div class="form-group">
-        <input type="number" style="width: 15%;" [(ngModel)]="product.Stock" #Stok="ngModel" name="Stok"  required placeholder="Stok" class="form-control" >
+        <h4>Stok</h4>
+        <input type="number" style="width: 15%;" [(ngModel)]="product.Stock" #Stok="ngModel" name="Stok"  required  class="form-control" >
         <div class="alert alert-primary" *ngIf="Stok.invalid">Stok Zorunludur </div>
     </div>
+    
     <div class="form-group">
-        <input type="number"  [(ngModel)]="product.Barcode" #Stok="ngModel" name="Barcode"   placeholder="Barkod" class="form-control" >
+        <h4>Barkod</h4>
+        <input type="number"  [(ngModel)]="product.Barcode" #Stok="ngModel" name="Barcode"    class="form-control" >
     </div>
+    
     <div class="form-group">
-        <input type="text" [(ngModel)]="product.BuyingPrice" #BuyingPrice="ngModel" name="BuyingPrice"  placeholder="Alış Fiyatı" class="form-control" >
+        <h4>Alış Fiyatı</h4>
+        <input type="text" [(ngModel)]="product.BuyingPrice" #BuyingPrice="ngModel" name="BuyingPrice" class="form-control" >
     </div>
+    
     <div class="form-group">
-        <input type="text" [(ngModel)]="product.SellingPrice" #SellingPrice="ngModel" name="SellingPrice"  placeholder="Satış Fiyatı" class="form-control" >
+        <h4>Satış Fiyatı</h4>
+        <input type="text" [(ngModel)]="product.SellingPrice" #SellingPrice="ngModel" name="SellingPrice"  class="form-control" >
     </div>
-   <button [disabled]="addProduct.invalid" *ngIf="!product.ID"  class="btn btn-primary" (click)="add()">Ekle</button>
+   
+    <button [disabled]="addProduct.invalid" *ngIf="!product.ID"  class="btn btn-primary" (click)="add()">Ekle</button>
    <button [disabled]="addProduct.invalid" *ngIf="product.ID"  class="btn btn-primary" (click)="update()">Veriyi Degiştir</button>
+
 </form>

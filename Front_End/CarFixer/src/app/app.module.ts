@@ -21,6 +21,11 @@ import { ProductComponent } from './product/product.component';
 import { AddemployeeComponent } from './employee/addemployee/addemployee.component';
 import { AddproductComponent } from './product/addproduct/addproduct.component';
 import { ProductFilterPipe } from './product/productPipe/product-filter.pipe';
+import { CustomerPipe } from './pipes/customer.pipe';
+import { CarPipe } from './pipes/carpipe/car.pipe';
+
+
+
 
 
 
@@ -47,6 +52,8 @@ import { ProductFilterPipe } from './product/productPipe/product-filter.pipe';
     AddemployeeComponent,
     AddproductComponent,
     ProductFilterPipe,
+    CustomerPipe,
+    CarPipe,
 
    
 

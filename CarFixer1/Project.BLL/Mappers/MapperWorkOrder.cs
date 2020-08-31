@@ -23,7 +23,7 @@ namespace Project.BLL.Mappers
         {
           
             DTOWorkOrder dTOWorkOrder = new DTOWorkOrder();
-            dTOWorkOrder.AlmaTarihi = workOrder.AlmaTarih;
+            dTOWorkOrder.AlmaTarihi = workOrder.AlmaTarih;  
             dTOWorkOrder.AraciAlan = workOrder.AraciAlana;
             dTOWorkOrder.AraciBirakan = workOrder.AraciBirakan;
             dTOWorkOrder.BakimaGelecegiTarih = workOrder.BakimaGelecegiTarih;

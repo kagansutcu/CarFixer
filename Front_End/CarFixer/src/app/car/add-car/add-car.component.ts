@@ -14,29 +14,25 @@ import { CarService } from 'src/app/Services/car.service';
 export class AddCarComponent implements OnInit {
 brandID:number;
 @Input()car:Car = new Car();
-
 modelListInput:Model[];
 ModelID:number;
 years:Array<Number> = new Array<number>();
 @Output() carListOutPut = new EventEmitter<Car[]>();
-
-
-
-
-  constructor(private ModelService:ModelService,private ActivatedRouter:ActivatedRoute,private CarService:CarService,private Router:Router) { }
-
-  ngOnInit(): void 
+constructor(private ModelService:ModelService,private ActivatedRouter:ActivatedRoute,private CarService:CarService,private Router:Router) { }
+  
+ngOnInit(): void 
   {
     console.log(this.car)
     this.Count()
     if(this.car.ID == undefined)
     {
       this.car.CustomerID =  this.ActivatedRouter.snapshot.params.id;
-      console.log("Component:Car/Method:ngOnInit/Data From Customer Component/This.car.CustomerID=",this.car.CustomerID)
+      console.log("Component:Car/Method:ngOnInit/Data From Customer Component/This.car.CustomerID=",this.car.CustomerID)  
     }
     else
     {
-      this.ModelID = this.car.Model_ID
+      this.brandID = this.car.BrandID;
+      this.ModelID = this.car.Model_ID;
       console.log("component:addcar/CanInput=",this.car)
     }
   }
@@ -52,8 +48,6 @@ years:Array<Number> = new Array<number>();
   {
     if(brandID != undefined)
     { 
-
-      
       this.car.Model_ID = undefined;  
       console.log("Model ID =",this.ModelID )
       this.brandID = brandID;
@@ -63,7 +57,6 @@ years:Array<Number> = new Array<number>();
         this.modelListInput = data;
         console.log("Component:Car/Method:brandIDFromBrandComponent/Input To Brand from this.modelservice.GetByIDModel/this.ModelListInpıt=",data)
       });
-      
     }
     else{
       this.brandID = undefined;
@@ -74,7 +67,6 @@ years:Array<Number> = new Array<number>();
   }
   ModelIDOutPut(modelID:number)
   {
-    
     this.car.Model_ID = modelID;
     console.log("ModelIDOutOutPut this.car.Model_ID",this.car.Model_ID)
     console.log("Component:Car/Method:ModelIDOutPut,this.car.ModelID =",this.car.Model_ID)
@@ -90,7 +82,7 @@ years:Array<Number> = new Array<number>();
     console.log("araba",this.car)
     this.CarService.Add(this.car).subscribe(data => {
     this.Router.navigate(["cars"]);
-      })
+    })
   }
   cancel()
   {

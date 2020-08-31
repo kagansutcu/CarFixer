@@ -22,8 +22,9 @@ export class ProductComponent implements OnInit
     {
       this.productList = data;
       console.log("Component:Product,GettAllProduct",data);
+      this.img = false;
     });
-    this.img = false;
+
   }
   update(product:Product)
   {

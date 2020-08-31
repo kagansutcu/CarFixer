@@ -3,6 +3,7 @@
 <h1>Model Ekle</h1>
 <br>
 <form #addModel="ngForm" class="form-group" >
+    <h4>Model İsmi</h4>
     <input class="form-control"  #Name="ngModel" name="Name" required [(ngModel)]="modelInput.Name"  >
     <div *ngIf="Name.invalid" class="alert alert-primary">Model İsmi Zorunludur.</div>
 </form>

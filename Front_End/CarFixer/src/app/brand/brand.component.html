@@ -7,7 +7,6 @@
         </select>
         <div  class="alert alert-primary" *ngIf="!brand.ID">Marka Seçmek Zoruludur</div>
         <br>
-
         <button  (click)="add()" class="btn btn-primary" >Yeni Araba Markası Ekle</button>
         <button class="btn btn-primary" [disabled]="!brand.ID"  (click)=" UpdatebyButtonUpdate()">Güncelle</button>
         <button (click)="delete()"  [disabled]="!brand.ID" class="btn btn-danger">Sil</button>

@@ -2,6 +2,7 @@
 <h1>Marka Ekle</h1>
 
 <form #addbrand="ngForm">
+    <h4>Marka İsmi</h4>
     <input  class="form-control" type="text" required [(ngModel)]="brand.Name" #Name="ngModel"  name="Name" >
     <div class="alert alert-primary" *ngIf="Name.invalid">Marka ismi Zorunludu </div>
     <br>

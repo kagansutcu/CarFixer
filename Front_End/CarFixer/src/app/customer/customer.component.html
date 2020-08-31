@@ -7,29 +7,32 @@
 
 <img *ngIf="stop" class="img" src="/assets/photos/200.gif">
 
-<div *ngIf="customerListLength">
-    <table  *ngIf="customerListLength != 0"   class="table table-hover"  width="100%">
+
+    <table  *ngIf="customerList.length != 0"   class="table table-hover"  width="100%">
     <thead>
         <tr>
             <th>
               <h1> Müşteriler</h1> 
             </th>
         </tr>
+        <tr>
+            <th> <h3>Müşteri Adı  </h3> <input [(ngModel)]="filter" placeholder="Arama"  name="filter" class="form-control"></th>
+        </tr>
     </thead>
     <tbody>  
-        <tr *ngFor="let customer of customerList" style="margin-top:5px;" >
+        <tr *ngFor="let customer of customerList | customerFilter:filter" style="margin-top:5px;" >
             <td>
                 <details>
                          <summary class="Hover" style="font-weight: bold;">
                            {{customer.Name}}    
                         </summary>
                         <div class="Hover" *ngIf="customer.Phone">Telefon Numarası: {{customer.Phone}}</div>
+                        <div class="Hover" *ngIf="customer.Phone2">Telefon Numarası 2: {{customer.Phone2}}</div>
                         <div class="Hover" *ngIf="customer.CariType" > Cari Type : {{customer.CariType}}</div>
                         <div class="Hover" *ngIf="customer.CariHesapKodu" >Cari Hesap Kodu: {{customer.CariHesapKodu}}</div>
                         <div class="Hover" *ngIf="customer.Authorized"> Yetkili Kişi: {{customer.Authorized}} </div>
                         <div class="Hover" *ngIf="customer.TaxNumber">Vergi Numarası: {{customer.TaxNumber}}</div>
                         <div class="Hover" *ngIf="customer.TaxRoom"> Vergi Odası: {{customer.TaxRoom}}</div>
-                        <div class="Hover" *ngIf="customer.Phone2">Telefon Numarası 2: {{customer.Phone2}}</div>
                         <div class="Hover" *ngIf="customer.RiskStatus">Risk Durumu: {{customer.RiskStatus}}</div>
                         <div class="Hover" *ngIf="customer.Email">E-mail Adresi: {{customer.Email}}</div>
                         <div class="Hover" *ngIf="customer.WebSite">Web Sitesi: {{customer.WebSite}}</div>
@@ -47,16 +50,16 @@
                     </details>
                 </details>
             </td>
-             <button   style="margin-left: 10%; margin-top: 1%;" class="btn btn-primary" [routerLink]="['/addcar',customer.ID ]" >Araba Ekle</button> 
-            <button style="margin-left: 10%; margin-top: 1%;" class="btn btn-primary" [routerLink]="['/addcustomer',customer ]" >Güncelle</button>
-            <button class="btn btn-danger"  style="margin-left: 10%; margin-top: 1%;" (click)="delete(customer.ID)" >Sil</button>
+             <button   style="margin-left: 2%; margin-top: 1%;" class="btn btn-primary" [routerLink]="['/addcar',customer.ID ]" >Araba Ekle</button> 
+            <button style="margin-left: 2%; margin-top: 1%;" class="btn btn-primary" [routerLink]="['/addcustomer',customer ]" >Güncelle</button>
+            <button class="btn btn-danger"  style="margin-left: 2%; margin-top: 1%;" (click)="delete(customer.ID)" >Sil</button>
         </tr>
     </tbody>
 </table>   
-</div>
 
 
-<div  *ngIf="customerListLength == 0">
+
+<div  *ngIf="customerList.length == 0">
     <hr>
     <h1>Müşteri Kaydı Bulunmamaktadır </h1>
     <hr>

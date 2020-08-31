@@ -3,8 +3,7 @@ import { CustomerService } from '../Services/customer.service';
 import { CarService } from '../Services/car.service';
 import { Customer } from './Customer';
 import { Car } from '../car/Car';
-import { escapeRegExp } from '@angular/compiler/src/util';
-import { typeWithParameters } from '@angular/compiler/src/render3/util';
+import { stringify } from 'querystring';
 
 
 
@@ -17,9 +16,9 @@ export class CustomerComponent implements OnInit
 {
 
   //#region Variables 
+  filter:string;
   customerList:Customer[];
   carList:Car[];
-  customerListLength:number;
   stop=true;
   //#endregion
 
@@ -30,17 +29,16 @@ export class CustomerComponent implements OnInit
     this.CustomerService.GetAll().subscribe(data =>
     { 
       this.customerList = data;
-    this.customerListLength =  this.customerList.length
-    console.log("customerlist length =",this.customerListLength)
-     console.log(data)
+      console.log(data)
       this.CarService.GetAll().subscribe(data =>
       {
         this.carList = data;
         console.log(this.carList);
-       
+        this.stop = false;  
       }); 
     });
-    this.stop = false;   //#endregion 
+   //#endregion 
+
   }
   delete(customerID:number)
   {

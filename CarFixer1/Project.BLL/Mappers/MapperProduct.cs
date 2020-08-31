@@ -20,7 +20,7 @@ namespace Project.BLL.Mappers
             dTOProduct.Tax = product.Tax;
             dTOProduct.BuyingPrice = product.BuyingPrice;
             dTOProduct.Code = product.Code;
-           dTOProduct.Barcode = product.Barcode;
+            dTOProduct.Barcode = product.Barcode;
             return dTOProduct;
         }
 

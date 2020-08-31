@@ -1,18 +1,18 @@
 
 
-    <img *ngIf="img" src="/assets/photos/200.gif" class="img">
+<img *ngIf="img" src="/assets/photos/200.gif" class="img">
     
-    <form *ngIf="showEmployeeDrop" class="form-group">
-        <select class="form-control" name="ID" id ="ID" [(ngModel)]="employee.ID" #ID="ngModel">
+<form *ngIf="showEmployeeDrop" class="form-group">
+    
+    <select class="form-control" name="ID" id ="ID" [(ngModel)]="employee.ID" #ID="ngModel">
                 <option *ngFor="let employee of employeeList" [value]="employee.ID">{{employee.Name}}  </option>
-        </select>
-        <div  class="alert alert-primary"  *ngIf="drop">Personel Görevlendirmek zorunludur</div>
-        <h4><div *ngFor="let employee of employeeList2"> Görevlendirilen Personel : {{employee.Name}}</div></h4>
-    <button (click)="select(employee)" class="btn btn-primary"  [disabled]="!employee.ID">Calışını Görevlendir</button>
+    </select>
+    <div  class="alert alert-primary"  *ngIf="drop">Personel Görevlendirmek zorunludur</div>
+    <h4><div *ngFor="let employee of employeeList2"> Görevlendirilen Personel : {{employee.Name}}</div></h4>
+    <button (click)="select(employee)" class="btn btn-primary"  [disabled]="!employee.ID || employeeList.length == 0">Calışını Görevlendir</button>
+</form>
 
-    </form>
-
-<div *ngIf="employeeList.length == 0 && img == false" >
+<div *ngIf="employeeList.length == 0 && noEmployee" >
     <hr>
     <h1>Personel Kaydı Bulunmamaktadır </h1>
     <hr>
@@ -20,7 +20,7 @@
 
 
 
-<div *ngIf="!showEmployeeList">
+<div *ngIf="showEmployeeList">
     <table class="table table-hover" width="100%" >
         <thead>
             <h1 *ngIf="employeeList.length != 0">Personeller</h1>
@@ -30,13 +30,13 @@
                 <td>
                 <details>
                     <summary class="hover" style="font-weight: bold;">
-              Personel ismi / İsim Ve Soy İsim : {{employee.Name}} / Telefon Numarası: {{employee.PhoneNumber}}
+                        Personel Adı / Soy Adı : {{employee.Name}} / Telefon Numarası: {{employee.PhoneNumber}}
                     </summary>
                 </details>
                 </td>
                 <button class="btn btn-primary" (click)="update(employee.ID)" >Güncelle</button>
                 <button class="btn btn-primary">İşleri</button>
-            </tr>
+            </tr>   
         </tbody>
     </table>
     <br>

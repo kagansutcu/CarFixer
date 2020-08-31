@@ -1,5 +1,6 @@
 <div>
     <form>
+        <h4>Araba Tipi İsmi</h4>
         <input type="text" [(ngModel)]="carType.Name" required #Name="ngModel" name="Name" class="form-control" >
     <div *ngIf="Name.invalid" class="alert alert-primary">Araba Tipi İsmi Zorunludur</div>
     </form>

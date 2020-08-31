@@ -18,9 +18,7 @@ export class WorkOrder {
     CustomerWant: string;
     EmployeeComment: string;
     Plaque:string;          
-    Used:number;
     CustomerName:string;
-    ProductName:string;
     Work_Employee:Array<Work_Employee> =  new  Array<Work_Employee>();
     Product_WorkOrder:Array<Product_WorkOrder>= new Array<Product_WorkOrder>();
     

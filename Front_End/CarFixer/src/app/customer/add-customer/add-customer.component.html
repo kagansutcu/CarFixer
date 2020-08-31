@@ -1,69 +1,84 @@
 <h1>Müşteri Ekle</h1>
 <hr/>
 <form #addCustomer="ngForm" class="panel-primary">
+    
     <div class="form-group"> 
-        <input name="Name" #Name="ngModel" type="text"  required [(ngModel)]="customer.Name" placeholder="Müşteri İsmi" class="form-control"   >
+        <h4>Müşteri İsmi</h4>
+        <input name="Name" #Name="ngModel" type="text"  required [(ngModel)]="customer.Name"  class="form-control"   >
         <div *ngIf="Name.invalid" class="alert alert-primary">Müşteri İsmi Zorunludur</div>
     </div>
     
     <div class="form-group">
-        <input  required minlength="10" maxlength="10" name="Phone" #Phone="ngModel" type="text" [(ngModel)]="customer.Phone" placeholder="Telefon Numarası/Başında Sıfır Olmadan Giriniz" class="form-control" >
+        <h4>Telefon Numarası</h4>
+        <input  required minlength="10" maxlength="10" name="Phone" #Phone="ngModel" type="text" [(ngModel)]="customer.Phone" placeholder="Başında Sıfır Olmadan Giriniz" class="form-control" >
         <div class="form-group">
-        <div *ngIf="Phone.invalid" class="alert alert-primary">Telefon Numarası Zorunludur</div>
-        <div *ngIf="Phone.invalid" class="alert  alert-danger">Telefon Numarası 10 Haneli Olmalıdır </div>
-    </div>
-    </div>
-    
-    <div class="form-group">
-        <input name="Phone2"minlength="10" maxlength="10"   #Phone2="ngModel" type="text" [(ngModel)]="customer.Phone2" placeholder="Telefon Numarası2 /Başında Sıfır Olmadan Giriniz" class="form-control" >
-        <div *ngIf="Phone2.invalid" class="alert  alert-danger">Telefon Numarası 10 Haneli Olmalıdır </div>
+            <div *ngIf="Phone.invalid" class="alert alert-primary">Telefon Numarası Zorunludur / Başında Sıfır Olmadan Giriniz</div>
+            <div *ngIf="Phone.invalid" class="alert  alert-danger">Telefon Numarası 10 Haneli Olmalıdır </div>
+        </div>
     </div>
     
     <div class="form-group">
-            <input name="CariType" #CarType="ngModel" type="text" [(ngModel)]="customer.CariType" placeholder="Cari Tipi" class="form-control" >
+        <h4>Telefon Numarası2</h4>
+        <input name="Phone2"minlength="10" maxlength="10"   #Phone2="ngModel" type="text" [(ngModel)]="customer.Phone2"  class="form-control" >
+        <div *ngIf="Phone2.invalid" class="alert  alert-danger">Telefon Numarası 10 Haneli Olmalıdır /Başında Sıfır Olmadan Giriniz </div>
     </div>
     
     <div class="form-group">
-        <input name="CariHesapKodu" #CariHesapKodu="ngModel" type="text" [(ngModel)]="customer.CariHesapKodu" placeholder="Cari Hesap Kodu" class="form-control" >
+        <h4>Cari Tipi</h4>
+            <input name="CariType" #CarType="ngModel" type="text" [(ngModel)]="customer.CariType" class="form-control" >
+    </div>
+    
+    <div class="form-group">
+        <h4>Cari Hesap Kodu </h4>
+        <input name="CariHesapKodu" #CariHesapKodu="ngModel" type="text" [(ngModel)]="customer.CariHesapKodu"  class="form-control" >
     </div>
 
     <div class="form-group">
-        <input name="Authorized" #Authorized="ngModel" type="text" [(ngModel)]="customer.Authorized" placeholder="Yetkili Kişi" class="form-control" >
-    </div>
-
-      <div class="form-group">
-        <input name="TaxNumber" #TaxNumber="ngModel" type="text" [(ngModel)]="customer.TaxNumber" placeholder="Vergi Numarası" class="form-control" >
+        <h4>Yetkili Kişi</h4>
+        <input name="Authorized" #Authorized="ngModel" type="text" [(ngModel)]="customer.Authorized"  class="form-control" >
     </div>
 
     <div class="form-group">
-        <input name="TaxRoom" #TaxRoom="ngModel" type="text" [(ngModel)]="customer.TaxRoom" placeholder="Vergi Odası" class="form-control" >
+        <h4>Vergi Numarası</h4>
+        <input name="TaxNumber" #TaxNumber="ngModel" type="text" [(ngModel)]="customer.TaxNumber"  class="form-control" >
     </div>
 
     <div class="form-group">
-        <input name="RiskStatus" #RiskStatus="ngModel" type="text" [(ngModel)]="customer.RiskStatus" placeholder="Risk Durumu" class="form-control" >
+        <h4>Vergi Odası</h4>
+        <input name="TaxRoom" #TaxRoom="ngModel" type="text" [(ngModel)]="customer.TaxRoom"  class="form-control" >
     </div>
 
     <div class="form-group">
-        <input name="Email" #Email="ngModel" type="text" [(ngModel)]="customer.Email" placeholder="E-mail Adresi" class="form-control" >
+        <h4>Risk Durumu</h4>
+        <input name="RiskStatus" #RiskStatus="ngModel" type="text" [(ngModel)]="customer.RiskStatus"  class="form-control" >
     </div>
 
     <div class="form-group">
-        <input name="WebSite" #WebSite="ngModel" type="text" [(ngModel)]="customer.WebSite" placeholder="WebSitesi" class="form-control" >
+      <h4>E-mail Adresi</h4>
+        <input name="Email" #Email="ngModel" type="text" [(ngModel)]="customer.Email"  class="form-control" >
     </div>
 
     <div class="form-group">
-        <input name="Fax" #Fax="ngModel" type="text" [(ngModel)]="customer.Fax" placeholder="Fax" class="form-control" >
+        <h4>Web Sitesi</h4>
+        <input name="WebSite" #WebSite="ngModel" type="text" [(ngModel)]="customer.WebSite"  class="form-control" >
     </div>
 
     <div class="form-group">
-        <input name="Address" #Address="ngModel" type="text" [(ngModel)]="customer.Address" placeholder="Adresi" class="form-control" >
+        <h4>Fax</h4>
+        <input name="Fax" #Fax="ngModel" type="text" [(ngModel)]="customer.Fax"  class="form-control" >
     </div>
 
     <div class="form-group">
-        <input name="Comment" #Comment="ngModel" type="text" [(ngModel)]="customer.Comment" placeholder="Yorum" class="form-control" >
+        <h4>Adresi</h4>
+        <input name="Address" #Address="ngModel" type="text" [(ngModel)]="customer.Address"  class="form-control" >
+    </div>
+
+    <div class="form-group">
+        <h4>Yorum</h4>
+        <input name="Comment" #Comment="ngModel" type="text" [(ngModel)]="customer.Comment"  class="form-control" >
     </div>
 
     
-        <button (click)="add()" [disabled]="addCustomer.invalid"  class="btn btn-primary" *ngIf="customer.ID == undefined">Müşteri Ekle </button>
-        <button (click)="add()" [disabled]="addCustomer.invalid"  class="btn btn-primary" *ngIf="customer.ID != undefined">Veriyi Degiştir </button>
+    <button (click)="add()" [disabled]="addCustomer.invalid"  class="btn btn-primary" *ngIf="customer.ID == undefined">Müşteri Ekle </button>
+    <button (click)="add()" [disabled]="addCustomer.invalid"  class="btn btn-primary" *ngIf="customer.ID != undefined">Veriyi Degiştir </button>
 </form>
